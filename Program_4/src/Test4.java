@@ -21,7 +21,9 @@ public class Test4 extends Thread {
     private final String noDisk = "disabled";
     private Random randomNum = new Random();
 
-    private long time; // Time
+    private long startTime; // Time
+    private long endTime;
+    private long randomTime;
 
 
     public Test4(String[] args)
@@ -42,7 +44,7 @@ public class Test4 extends Thread {
     public void run()
     {
         SysLib.flush(); // Clear
-        time = new Date().getTime(); // Move down to each method later
+        //time = new Date().getTime(); // Move down to each method later
 
         SysLib.cout("\nIn Run \n"); // Remove later
         switch(caseNum)
@@ -80,6 +82,8 @@ public class Test4 extends Thread {
 
             arr[i] = Math.abs((randomNum.nextInt() % BSIZE));
         }
+        startTime = new Date().getTime();
+
         for(int i = 0; i < iterations; i++)
         {
             for(int a = 0; a < BSIZE; a++)
@@ -89,11 +93,13 @@ public class Test4 extends Thread {
             }
             write(arr[i], writeBuff);
         }
+
         for(int i = 0; i < iterations; i++)
         {
             read(arr[i], readBuff);
         }
-
+        endTime = new Date().getTime();
+        showPerformance();
     }
 
     //======================= localAccess() ====================================
@@ -137,7 +143,7 @@ public class Test4 extends Thread {
     }
     private void showPerformance()
     {
-
+        SysLib.cout("\nTurnaround Time: " + (endTime - startTime));
     }
     private void check()
     {

@@ -38,7 +38,7 @@ public class Test4 extends Thread {
         if(!(diskCase.equals(useDisk) || diskCase.equals(noDisk)))
             throw new RuntimeException("Please enter either \"enabled\" or \"disabled\" for the first argument");
         if(caseNum < 1 || caseNum > 4)
-            throw new RuntimeException("Only integer from 1-4 are allowed for the second argument");
+            throw new RuntimeException("Only an integer from 1-4 are allowed for the second argument");
     }
 
     public void run()
@@ -70,8 +70,7 @@ public class Test4 extends Thread {
     //======================= randomAccess() ===================================
     //  Reads and writes many blocks randomly across the disk.
     //
-    //  I'll add more to this. Getting late though so I'll be doing it when I wake
-    //  To Do: Check performance on the method with time and validity.
+    //
     public void randomAccess()
     {
         SysLib.cout("\nIn Random \n"); // Will remove later
@@ -79,7 +78,6 @@ public class Test4 extends Thread {
 
         // Fill array
         for(int i = 0; i < iterations; i++) {
-
             arr[i] = Math.abs((randomNum.nextInt() % BSIZE));
         }
         startTime = new Date().getTime();
@@ -100,10 +98,11 @@ public class Test4 extends Thread {
         }
         endTime = new Date().getTime();
         showPerformance();
+        check();
     }
 
     //======================= localAccess() ====================================
-    //  Reads and writes a small selection of blocks many times to get a high
+    //  Read and write a small selection of blocks many times to get a high
     //  ratio of cache and hits
     //
     public void localAccess()
@@ -143,7 +142,22 @@ public class Test4 extends Thread {
     }
     private void showPerformance()
     {
-        SysLib.cout("\nTurnaround Time: " + (endTime - startTime));
+        switch(caseNum)
+        {
+            case 1:
+                SysLib.cout("\nRandom Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                break;
+            case 2:
+                SysLib.cout("\nLocalized Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                break;
+            case 3:
+                SysLib.cout("\nMixed Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                break;
+            case 4:
+                SysLib.cout("\nAdversary Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                break;
+        }
+
     }
     private void check()
     {

@@ -3,7 +3,11 @@
 //  Authors: Chad Dugie, David Trinh
 //-----------------------------------------------------------------------------
 //	Description:
+//  Purpose of Test4 is to do a performance test on Cache.java to see
+//  how it performs in four difference cases.
+//
 //-----------------------------------------------------------------------------
+
 import java.util.*;
 
 public class Test4 extends Thread {
@@ -42,6 +46,10 @@ public class Test4 extends Thread {
             throw new RuntimeException("Only an integer from 1-4 are allowed for the second argument");
     }
 
+    //======================= run() ============================================
+    //  Directs to a method for performance testing depending on the given
+    //  argument.
+    //
     public void run()
     {
         SysLib.flush(); // Clear
@@ -67,7 +75,6 @@ public class Test4 extends Thread {
 
     //======================= randomAccess() ===================================
     //  Reads and writes many blocks randomly across the disk.
-    //
     //
     public void randomAccess()
     {
@@ -119,6 +126,12 @@ public class Test4 extends Thread {
         showPerformance();
         check();
     }
+
+
+    //======================= MixedAccess() ====================================
+    //  90% of the total disk operations are localized accesses and 10%
+    //  are random accesses.
+    //
     public void mixedAccess()
     {
         int[] arr = new int[iterations];
@@ -149,6 +162,10 @@ public class Test4 extends Thread {
         showPerformance();
         check();
     }
+
+    //======================= AdversaryAccess() ================================
+    //  Generates disk accesses that do not make good use of the disk cache
+    //
     public void adversaryAccess()
     {
         startTime = new Date().getTime();

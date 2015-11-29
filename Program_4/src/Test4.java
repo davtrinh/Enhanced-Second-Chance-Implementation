@@ -198,6 +198,9 @@ public class Test4 extends Thread {
         else
             SysLib.rawwrite(num, arr);
     }
+    //======================= showPerformance() ================================
+    //  Prints out performance for the particular case.
+    //
     private void showPerformance()
     {
         switch(caseNum)
@@ -217,6 +220,9 @@ public class Test4 extends Thread {
         }
 
     }
+    //======================= check() ==========================================
+    //  Checks the read and write buffer to see if they are equal.
+    //
     private void check()
     {
         if(!(Arrays.equals(readBuff, writeBuff)))

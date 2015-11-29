@@ -78,7 +78,7 @@ public class Test4 extends Thread {
 
         // Fill array
         for(int i = 0; i < iterations; i++) {
-            arr[i] = Math.abs((randomNum.nextInt() % BSIZE));
+            arr[i] = Math.abs(randomNum.nextInt() % BSIZE);
         }
         startTime = new Date().getTime();
 
@@ -86,8 +86,7 @@ public class Test4 extends Thread {
         {
             for(int a = 0; a < BSIZE; a++)
             {
-                byte b = (byte) a;
-                writeBuff[a] = b;
+                writeBuff[a] = (byte)a;
             }
             write(arr[i], writeBuff);
         }
@@ -107,15 +106,74 @@ public class Test4 extends Thread {
     //
     public void localAccess()
     {
-
+        SysLib.cout("\nIn Local \n"); // Will remove later
+        startTime = new Date().getTime();
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < BSIZE; j++) {
+                writeBuff[j] = (byte)(i + j);
+            }
+            for (int j = 0; j < 1000; j += 100) {
+                write(j, writeBuff);
+            }
+            for (int j = 0; j < 1000; j += 100) {
+                read(j, readBuff);
+            }
+        }
+        endTime = new Date().getTime();
+        showPerformance();
+        check();
     }
     public void mixedAccess()
     {
+        SysLib.cout("\nIn Mixed \n"); // Will remove later
+        int[] arr = new int[iterations];
 
+        // Fill array
+        for(int i = 0; i < iterations; i++) {
+            if (Math.abs(randomNum.nextInt() % 10) > 8) {
+                arr[i] = Math.abs(randomNum.nextInt() % BSIZE);
+            } else {
+                arr[i] = Math.abs(randomNum.nextInt() % 10);
+            }
+        }
+        startTime = new Date().getTime();
+        for(int i = 0; i < iterations; i++)
+        {
+            for(int a = 0; a < BSIZE; a++)
+            {
+                writeBuff[a] = (byte)a;
+            }
+            write(arr[i], writeBuff);
+        }
+
+        for(int i = 0; i < iterations; i++)
+        {
+            read(arr[i], readBuff);
+        }
+        endTime = new Date().getTime();
+        showPerformance();
+        check();
     }
     public void adversaryAccess()
     {
-
+        SysLib.cout("\nIn Adversary \n"); // Will remove later
+        startTime = new Date().getTime();
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < BSIZE; j++) {
+                writeBuff[j] = (byte)j;
+            }
+            for (int j = 0; j < 10; j++) {
+                write(i * 10 + j, writeBuff);
+            }
+        }
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 10; j++) {
+                read(i * 10 + j, readBuff);
+            }
+        }
+        endTime = new Date().getTime();
+        showPerformance();
+        check();
     }
 
     //======================= read(int, byte[]) ================================

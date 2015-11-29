@@ -1,0 +1,80 @@
+/////////////////////// Random Access ///////////////////////////////
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 disabled 1
+l Test4 disabled 1
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+
+-->Random Access Turnaround Time with cache disabled : 7781msec
+
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 enabled 1
+l Test4 enabled 1
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+
+Random Access Turnaround Time with cache enabled : 6438msec-->
+
+
+/////////////////////// Localized Access ////////////////////////////
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 disabled 2
+l Test4 disabled 2
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+-->
+Localized Access Turnaround Time with cache disabled : 15116msec
+
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 enabled 2
+l Test4 enabled 2
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+
+Localized Access Turnaround Time with cache enabled : 7132msec-->
+
+
+/////////////////////// Mixed Acess /////////////////////////////////
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 disabled 3
+l Test4 disabled 3
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+
+-->Mixed Access Turnaround Time with cache disabled : 5287msec
+
+
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 enabled 3
+l Test4 enabled 3
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+
+Mixed Access Turnaround Time with cache enabled : 3078msec-->
+
+
+/////////////////////// Adversary Access ////////////////////////////
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 disabled 4
+l Test4 disabled 4
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+
+Adversary Turnaround Time with cache disabled : 8064msec-->
+
+
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Test4 enabled 4
+l Test4 enabled 4
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+
+Adversary Turnaround Time with cache enabled : 7701msec-->

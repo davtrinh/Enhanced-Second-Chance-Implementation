@@ -34,6 +34,7 @@ public class Test4 extends Thread {
         // Holds arguments
         diskCase = args[0].toLowerCase();
         caseNum = Integer.parseInt(args[1]);
+
         // Argument checking
         if(!(diskCase.equals(useDisk) || diskCase.equals(noDisk)))
             throw new RuntimeException("Please enter either \"enabled\" or \"disabled\" for the first argument");
@@ -44,9 +45,6 @@ public class Test4 extends Thread {
     public void run()
     {
         SysLib.flush(); // Clear
-        //time = new Date().getTime(); // Move down to each method later
-
-        SysLib.cout("\nIn Run \n"); // Remove later
         switch(caseNum)
         {
             case 1:
@@ -73,7 +71,6 @@ public class Test4 extends Thread {
     //
     public void randomAccess()
     {
-        SysLib.cout("\nIn Random \n"); // Will remove later
         int[] arr = new int[iterations];
 
         // Fill array
@@ -106,7 +103,6 @@ public class Test4 extends Thread {
     //
     public void localAccess()
     {
-        SysLib.cout("\nIn Local \n"); // Will remove later
         startTime = new Date().getTime();
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < BSIZE; j++) {
@@ -125,7 +121,6 @@ public class Test4 extends Thread {
     }
     public void mixedAccess()
     {
-        SysLib.cout("\nIn Mixed \n"); // Will remove later
         int[] arr = new int[iterations];
 
         // Fill array
@@ -156,7 +151,6 @@ public class Test4 extends Thread {
     }
     public void adversaryAccess()
     {
-        SysLib.cout("\nIn Adversary \n"); // Will remove later
         startTime = new Date().getTime();
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < BSIZE; j++) {
@@ -206,16 +200,16 @@ public class Test4 extends Thread {
         switch(caseNum)
         {
             case 1:
-                SysLib.cout("\nRandom Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                SysLib.cout("\nRandom Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime) + "msec");
                 break;
             case 2:
-                SysLib.cout("\nLocalized Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                SysLib.cout("\nLocalized Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime) + "msec");
                 break;
             case 3:
-                SysLib.cout("\nMixed Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                SysLib.cout("\nMixed Access Turnaround Time with cache " + diskCase + " : " + (endTime - startTime) + "msec");
                 break;
             case 4:
-                SysLib.cout("\nAdversary Turnaround Time with cache " + diskCase + " : " + (endTime - startTime));
+                SysLib.cout("\nAdversary Turnaround Time with cache " + diskCase + " : " + (endTime - startTime) + "msec");
                 break;
         }
 

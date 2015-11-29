@@ -7,7 +7,7 @@
 import java.util.*;
 
 public class Test4 extends Thread {
-    private final int iterations = 100;
+    private final int iterations = 100; // Can increase or decrease
     private static final int BSIZE = 512;
     private byte[] writeBuff = new byte[BSIZE];
     private byte[] readBuff = new byte[BSIZE];

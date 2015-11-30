@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e22e54d1-04ca-436c-9d16-63f6b5447d04" name="Default" comment="Changes were only made to Cache.java. It should be done and ready for testing.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Cache.java" afterPath="$PROJECT_DIR$/src/Cache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e22e54d1-04ca-436c-9d16-63f6b5447d04" name="Default" comment="Changes were only made to Cache.java. It should be done and ready for testing." />
     <ignored path="Program_4.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,42 +16,12 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="Test4.java" pinned="false" current-in-tab="true">
-              <entry file="file://$USER_HOME$/Desktop/CSS430/HW4/NickBLab4/Test4.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.74099725">
-                    <caret line="267" column="14" selection-start-line="267" selection-start-column="12" selection-end-line="267" selection-end-column="14" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Program_4" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Cache.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/CSS430/HW4/NickBLab4/Cache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.758621">
-              <caret line="197" column="13" selection-start-line="197" selection-start-column="13" selection-end-line="197" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Cache.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cache.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -796,14 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/CSS430/HW4/NickBLab4/Test4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74099725">
-          <caret line="267" column="14" selection-start-line="267" selection-start-column="12" selection-end-line="267" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Kernel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.034483">
@@ -827,6 +786,14 @@
           <folding>
             <element signature="e#0#7509#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/CSS430/HW4/NickBLab4/Test4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74099725">
+          <caret line="267" column="14" selection-start-line="267" selection-start-column="12" selection-end-line="267" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

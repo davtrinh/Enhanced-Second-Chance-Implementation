@@ -167,7 +167,7 @@ public class Cache {
     }
 
     //======================= sync() ===========================================
-    //  Matins clean block copies in Cache.java
+    //  Maintains clean block copies in Cache.java
     //
     public synchronized void sync() {
         for (int i = 0; i < pageTable.length; i++) {

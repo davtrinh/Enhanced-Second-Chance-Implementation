@@ -1,3 +1,5 @@
+// These test results differ from the report to show how much each
+// test varies.
 /////////////////////// Random Access ///////////////////////////////
 threadOS ver 1.0:
 Type ? for help
